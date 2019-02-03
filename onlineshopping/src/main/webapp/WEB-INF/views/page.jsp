@@ -26,7 +26,7 @@
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
 <!-- Bootstrap theme CSS -->
-<link href="${css}/bootstrap-flatly-theme.css" rel="stylesheet">
+<!--  link href="${css}/bootstrap-flatly-theme.css" rel="stylesheet"-->
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -36,9 +36,11 @@
 <body>
 	<div class="wrapper">
 		<!-- Navigation -->
+		
 		<%@include file="./shared/navbar.jsp"%>
+	
 		<!-- Page Content -->
-		<div class="content">
+		<div id="contenuto" class="content">
 			<c:if test="${userClickHome == true }">
 				<%@include file="./home.jsp"%>
 			</c:if>
@@ -47,6 +49,9 @@
 			</c:if>
 			<c:if test="${userClickContact == true }">
 				<%@include file="./contact.jsp"%>
+			</c:if>
+			<c:if test="${userClickAllProducts == true or userClickCategoryProducts==true}">
+				<%@include file="./listProducts.jsp"%>
 			</c:if>
 
 		</div>
